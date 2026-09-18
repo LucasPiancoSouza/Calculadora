@@ -76,30 +76,19 @@ class Calculadora{
         this.segundo_numero = Number(this.segundo_numero);
         switch(this.operacao){
             case "+":
-                resultado = this.primeiro_numero + this.segundo_numero;
-                this.primeiro_numero = resultado;
-                this.segundo_numero = null;
+                resultado = this.soma(this.primeiro_numero, this.segundo_numero);
             break
             case "-":
-                resultado = this.primeiro_numero - this.segundo_numero;
-                this.primeiro_numero = resultado;
-                this.segundo_numero = null;
+                resultado = this.subtracao(this.primeiro_numero, this.segundo_numero);
             break
             case "÷":
-                resultado = this.primeiro_numero / this.segundo_numero;
-                this.primeiro_numero = resultado;
-                this.segundo_numero = null;
+                resultado = this.divisao(this.primeiro_numero, this.segundo_numero);
             break
             case "x":
-                resultado = this.primeiro_numero * this.segundo_numero;
-                this.primeiro_numero = resultado;
-                this.segundo_numero = null;
+                resultado = this.multiplicacao(this.primeiro_numero, this.segundo_numero);
             break
             case "%":
-                    let porcentagem = this.primeiro_numero / 100;
-                    resultado = porcentagem  * this.segundo_numero;
-                    this.primeiro_numero = resultado;
-                    this.segundo_numero = null;
+                resultado = this.porcentagem(this.primeiro_numero, this.segundo_numero);
             break
         }
         this.operacao = null;
@@ -107,6 +96,43 @@ class Calculadora{
 
         }
     }
+        soma(numero1,numero2){
+            let resultado = numero1 + numero2;
+            this.primeiro_numero = resultado;
+            this.segundo_numero = null;
+            return resultado;
+        }
+        subtracao(numero1,numero2){
+            let resultado = numero1 - numero2;
+            this.primeiro_numero = resultado;
+            this.segundo_numero = null;
+            return resultado;
+        }
+        divisao(numero1,numero2){
+            if(numero1 == 0 || numero2 == 0){
+                return "Erro";
+            }
+            else{
+                let resultado = numero1 / numero2;
+                this.primeiro_numero = resultado;
+                this.segundo_numero = null;
+                return resultado;
+            }
+            
+        }
+        multiplicacao(numero1,numero2){
+            let resultado = numero1 * numero2;
+            this.primeiro_numero = resultado;
+            this.segundo_numero = null;
+            return resultado;
+        }
+        porcentagem(numero1,numero2){
+            let porcentagem = numero1 / 100;
+            let resultado = porcentagem  * numero2;
+            this.primeiro_numero = resultado;
+            this.segundo_numero = null;
+            return resultado;
+        }
         limpar_tudo(){
             this.primeiro_numero =  null;
             this.segundo_numero = null;
