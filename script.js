@@ -1,5 +1,6 @@
 class Calculadora{
     constructor(){
+        this.operacao_total = [];
         this.primeiro_numero =  null;
         this.segundo_numero = null;
         this.operacao = null;
