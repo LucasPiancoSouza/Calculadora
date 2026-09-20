@@ -38,8 +38,8 @@ main{
     margin-bottom: clamp(12px, 3vw, 18px);
     border: 1px solid #999;
     padding: 0 16px;
-    text-align: right;
-    font-size: clamp(24px, 7vw, 38px);
+    text-align: left;
+    font-size: clamp(18px, 7vw, 25px);
     font-weight: bold;
 }
 .fileira1, .fileira2, .fileira3, .fileira4, .fileira5 {
