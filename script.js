@@ -83,6 +83,9 @@ class Calculadora{
             break
             case "÷":
                 resultado = this.divisao(this.primeiro_numero, this.segundo_numero);
+                if(resultado == "Erro"){
+                    this.primeiro_numero = null;
+                }
             break
             case "x":
                 resultado = this.multiplicacao(this.primeiro_numero, this.segundo_numero);
@@ -91,6 +94,7 @@ class Calculadora{
                 resultado = this.porcentagem(this.primeiro_numero, this.segundo_numero);
             break
         }
+        console.log(this.primeiro_numero, this.segundo_numero);
         this.operacao = null;
         return resultado;
 
