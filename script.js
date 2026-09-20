@@ -1,6 +1,6 @@
 class Calculadora{
     constructor(){
-        this.operacao_total = [];
+        this.expressao = [];
         this.primeiro_numero =  null;
         this.segundo_numero = null;
         this.operacao = null;
@@ -47,11 +47,20 @@ class Calculadora{
             this.operacao = operacao;
             return operacao;
         }else{
-            this.calcular();
+            this.adiconar_na_expressao(this.primeiro_numero, this.operacao, this.segundo_numero);
             this.operacao = operacao
             return operacao
         }
         
+    }
+
+    adiconar_na_expressao(primeiro_numero,operacao,segundo_numero){
+        this.expressao.push(primeiro_numero, operacao, segundo_numero);
+        console.log(this.expressao);
+    }
+    
+    expressao_calcular(){
+
     }
     
     calcular(){
