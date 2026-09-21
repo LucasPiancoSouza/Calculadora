@@ -18,6 +18,7 @@ class Calculadora{
                 this.primeiro_numero += numero_digitado;  
                 return this.primeiro_numero;  
             }
+
             else {
                 this.primeiro_numero = numero_digitado;
                 return this.primeiro_numero;  
@@ -47,20 +48,30 @@ class Calculadora{
             this.operacao = operacao;
             return operacao;
         }else{
-            this.adiconar_na_expressao(this.primeiro_numero, this.operacao, this.segundo_numero);
-            this.operacao = operacao
-            return operacao
+            if(this.expressao == []){
+                this.adiconar_na_expressao(this.primeiro_numero, this.operacao, this.segundo_numero);
+                this.operacao = operacao;
+                return operacao
+            }else{
+                console.log(this.expressao)
+                this.adiconar_na_expressao(this.primeiro_numero, this.operacao, this.segundo_numero);
+                this.operacao = operacao;
+                console.log(this.expressao)
+                return operacao
+            }
+            
         }
         
     }
 
     adiconar_na_expressao(primeiro_numero,operacao,segundo_numero){
         this.expressao.push(primeiro_numero, operacao, segundo_numero);
-        console.log(this.expressao);
     }
+
+
     
     expressao_calcular(){
-
+        
     }
     
     calcular(){
